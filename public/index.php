@@ -17,4 +17,10 @@ $app->get('/login', function (Request $request, Response $response, array $args)
     return $response;
 });
 
+$app->post('/login', function () {
+    // echo json_encode($_POST);
+    echo json_encode($_POST);
+    die();
+});
+
 $app->run();

@@ -30,12 +30,12 @@
               <form action="index.html" id="login-form">
                 <div class="form-group">
                   <label class="form-control-label">Endereço de e-mail</label>
-                  <input type="email" class="form-control">
+                  <input type="email" name="email" class="form-control" value="marlon@marlon.com">
                 </div>
                 <div class="form-group">
                   <label class="form-control-label">Senha</label>
                   <div class="pass-group">
-                    <input type="password" class="form-control pass-input">
+                    <input type="password" name="password" class="form-control pass-input"  value="123456">
                     <span class="fas fa-eye toggle-password"></span>
                   </div>
                 </div>
