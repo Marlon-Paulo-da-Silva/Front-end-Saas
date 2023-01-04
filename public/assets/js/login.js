@@ -1,11 +1,12 @@
 
 const form = document.querySelector("#login-form");
+const message = document.querySelector("#message");
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  // try {
+  try {
 
     const formData = new FormData(form);
     axios.defaults.withCredentials = true;
@@ -22,19 +23,23 @@ form.addEventListener('submit', async (event) => {
       });
       
       await axios.get('http://api.descomplicando.site:8000/users').then((response) => {
-        console.log('users: ', response);
+        // console.log('users: ', response);
       });
       
       await axios.get('http://api.descomplicando.site:8000/api/user').then((response) => {
-        console.log('api user: ', response);
+        // console.log('api user: ', response);
       });
 
     // console.log('retorno axios /login')
     // console.log(data)
     console.log('............')
-  // } catch (error) {
-  //   console.log(error)
-  // }
+  } catch (error) {
+    console.log(error["message"])
+    message.innerHTML  = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Erro!</strong> E-mail ou Senha não conferem.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+  }
 
   console.log("Entrou no form addeventlistener")
 })

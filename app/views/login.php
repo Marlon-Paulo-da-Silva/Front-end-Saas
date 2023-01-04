@@ -39,6 +39,7 @@
                     <span class="fas fa-eye toggle-password"></span>
                   </div>
                 </div>
+                <div id="message"></div>
                 <div class="form-group">
                   <div class="row">
                     <div class="col-6">
