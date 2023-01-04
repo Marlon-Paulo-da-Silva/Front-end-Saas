@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <title><?=$this->e($title);?></title>
 
-  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
@@ -35,7 +35,7 @@
                 <div class="form-group">
                   <label class="form-control-label">Senha</label>
                   <div class="pass-group">
-                    <input type="password" name="password" class="form-control pass-input"  value="123456">
+                    <input id="input-password" type="password" name="password" class="form-control pass-input"  value="password">
                     <span class="fas fa-eye toggle-password"></span>
                   </div>
                 </div>

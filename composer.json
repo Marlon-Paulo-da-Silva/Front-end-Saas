@@ -2,7 +2,7 @@
     "name": "marlon/front-end-saas",
     "autoload": {
         "psr-4": {
-            "app\\": "src/"
+            "App\\": "app/"
         },
         "files":["app/helpers/helpers.php"]
     },
