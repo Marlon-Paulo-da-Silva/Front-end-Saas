@@ -1,4 +1,3 @@
-// const axios = require('axios');
 
 const form = document.querySelector("#login-form");
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
@@ -6,22 +5,36 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com';
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  try {
-    // const {data} = await axios.get(`${BASE_URL}/todos?_limit=5`);
+  // try {
 
     const formData = new FormData(form);
+    axios.defaults.withCredentials = true;
 
-    console.log('formData')
-    console.log(formData)
-    console.log('............')
+    // const {data} = await axios.post('http://api.descomplicando.site:8000/sanctum/token', formData);
 
-    const {data} = await axios.post('/login', formData);
-    console.log('retorno axios /login')
-    console.log(data)
+
+      await axios.get('http://api.descomplicando.site:8000/sanctum/csrf-cookie').then(response => {
+        console.log('csrf-cookie: ', response);
+      });
+      
+      await axios.post('http://api.descomplicando.site:8000/login').then(response => {
+        console.log('login: ', response);
+      });
+      
+      await axios.get('http://api.descomplicando.site:8000/users').then((response) => {
+        console.log('users: ', response);
+      });
+      
+      await axios.get('http://api.descomplicando.site:8000/api/user').then((response) => {
+        console.log('api user: ', response);
+      });
+
+    // console.log('retorno axios /login')
+    // console.log(data)
     console.log('............')
-  } catch (error) {
-    
-  }
+  // } catch (error) {
+  //   console.log(error)
+  // }
 
   console.log("Entrou no form addeventlistener")
 })

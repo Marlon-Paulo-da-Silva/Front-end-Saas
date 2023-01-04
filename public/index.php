@@ -18,8 +18,10 @@ $app->get('/login', function (Request $request, Response $response, array $args)
 });
 
 $app->post('/login', function () {
-    // echo json_encode($_POST);
-    echo json_encode($_POST);
+    $email = strip_tags($_POST['email']);
+    $password = strip_tags($_POST['password']);
+
+    echo json_encode([$email => $password]);
     die();
 });
 
