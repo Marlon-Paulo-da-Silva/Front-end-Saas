@@ -6,9 +6,10 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com';
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  const formData = new FormData(form);
+  
   try {
 
-    const formData = new FormData(form);
     axios.defaults.withCredentials = true;
 
     // const {data} = await axios.post('http://api.descomplicando.site:8000/sanctum/token', formData);
