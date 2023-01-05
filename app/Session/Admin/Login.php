@@ -19,7 +19,7 @@ class Login {
     self::init();
 
     // Define a sessão do usuário
-    $_SESSION['user-info'] = $obUser;
+    $_SESSION['user_info'] = $obUser;
 
     // Sucesso
     return true;
@@ -32,7 +32,7 @@ class Login {
     self::init();
 
     // Retorna a verificação
-    return isset($_SESSION['user-info']['id']);
+    return isset($_SESSION['user_info']['id']);
   }
 
   // Metodo responsável por deslogar o usuário
@@ -41,7 +41,7 @@ class Login {
     self::init();
 
     // desloga o usuário
-    unset($_SESSION['user-info']);
+    unset($_SESSION['user_info']);
 
     // sucesso
     return true;

@@ -53,15 +53,14 @@ $app->get('/', function (Request $request, Response $response, array $args) {
         exit();
     }
 
-    echo "<pre>";
-    print_r('Está logado');
-    print_r($_SESSION);
-    echo "</pre>";
-    exit();
+    // echo "<pre>";
+    // print_r('Está logado');
+    // // print_r($_SESSION);
+    // print_r(array_merge(['title' => 'Inicial'] , $_SESSION['user_info']));
+    // echo "</pre>";
+    // exit();
 
-    
-
-    view('home', ['title' => 'Inicial']);
+    view('home', array_merge(['title' => 'Inicial'] , $_SESSION['user_info']));
     return $response;
 });
 

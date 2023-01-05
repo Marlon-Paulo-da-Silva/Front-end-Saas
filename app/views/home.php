@@ -1,4 +1,4 @@
-<?php $this->layout('master', ['title' => $title]) ?>
+<?php $this->layout('master', ['title' => $title, 'name' => $name]) ?>
 
 <div class="page-wrapper">
             <div class="content container-fluid">
@@ -13,7 +13,7 @@
                                     <div class="dash-count">
                                         <div class="dash-title">Amount Due</div>
                                         <div class="dash-counts">
-                                            <p>1,642</p>
+                                            <p>116</p>
                                         </div>
                                     </div>
                                 </div>
