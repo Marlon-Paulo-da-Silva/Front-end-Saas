@@ -19,7 +19,7 @@ class Login {
     self::init();
 
     // Define a sessão do usuário
-    $_SESSION['user-info'][] = $obUser;
+    $_SESSION['user-info'] = $obUser;
 
     // Sucesso
     return true;

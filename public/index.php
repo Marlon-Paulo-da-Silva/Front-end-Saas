@@ -49,10 +49,8 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     
 
     if(!SessionAdminLogin::isLogged()){
-
         header('location: ' . getenv('BASE_URL') .'/login');
         exit();
-        
     }
 
     echo "<pre>";
@@ -61,11 +59,20 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     echo "</pre>";
     exit();
 
+    
+
     view('home', ['title' => 'Inicial']);
     return $response;
 });
 
 $app->get('/login', function (Request $request, Response $response, array $args) {
+    
+    if(SessionAdminLogin::isLogged()){
+        header('location: ' . getenv('BASE_URL') .'/');  
+        exit();
+    }
+
+    
     view('login', ['title' => 'Login']);
     return $response;
 });
@@ -75,6 +82,8 @@ $app->post('/login', function (Request $request, Response $response, array $args
     SessionAdminLogin::login($_POST);
       
     http_response_code(200);
+
+    echo json_encode(['status' => 'ok']);
 
 
     return $response;

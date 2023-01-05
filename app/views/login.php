@@ -53,7 +53,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-lg btn-block btn-primary w-100" type="submit">Acessar</button>
+                <button id="btn-submit-login" class="btn btn-lg btn-block btn-primary w-100" type="submit">Acessar</button>
                 <div class="login-or">
                   <span class="or-line"></span>
                   <span class="span-or">ou</span>
